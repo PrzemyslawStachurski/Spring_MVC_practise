@@ -16,6 +16,9 @@ public class StudentController {
     @Value("${countries}")
     private List<String> countries;
 
+    @Value("${systems}")
+    private List<String> systems;
+
     @GetMapping("/showStudentForm")
     public String showForm(Model model) {
 
@@ -24,6 +27,8 @@ public class StudentController {
         model.addAttribute("student", student);
 
         model.addAttribute("countries", countries);
+
+        model.addAttribute("systems",systems);
 
         return "student-form";
     }
