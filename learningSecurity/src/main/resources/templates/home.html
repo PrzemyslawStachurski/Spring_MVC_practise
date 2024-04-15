@@ -19,20 +19,23 @@
     </p>
 
     <hr>
+    <div sec:authorize="hasRole('MANAGER')">
+        <p>
+            <a th:href="@{/leaders}">Leadership meeting</a>
+            (Access granted only to Managers)
+        </p>
+        <hr>
+    </div>
 
-    <p>
-       <a th:href="@{/leaders}">Leadership meeting</a>
-        (Access granted only to Managers)
-    </p>
 
-    <hr>
+    <div sec:authorize="hasRole('ADMIN')">
+        <p>
+           <a th:href="@{/systems}">Systems` data</a>
+            (Access granted only to Admins)
+        </p>
+        <hr>
+    </div>
 
-    <p>
-       <a th:href="@{/systems}">Systems` data</a>
-        (Access granted only to Admins)
-    </p>
-
-    <hr>
 
     <form action="" th:action="@{/logout}" method="post">
 
